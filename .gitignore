@@ -1,0 +1,16 @@
+# IntelliJ config
+.idea/
+*.iml
+
+# Maven output
+target/
+
+# OS junk
+.DS_Store
+
+# Java build system
+/build/
+
+# Spring Boot config
+**/application.properties
+
