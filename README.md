@@ -2,6 +2,8 @@
 
 This is a Spring Boot 3 + Spring 6 + Hibernate demo project with REST endpoints.
 
+Each subfolder focuses on specific features or concepts.
+
 ## Features
 
 - REST controllers
@@ -13,27 +15,63 @@ This is a Spring Boot 3 + Spring 6 + Hibernate demo project with REST endpoints.
 ./mvnw spring-boot:run
 ```
 
-## 03 - Actuator
+## Setup
 
-Spring Boot Actuator was enabled by adding the required dependency and configuring `application.properties` to:
+Copy the sample configuration and customize it:
 
-- Expose all management endpoints:
-  ```properties
-  management.endpoints.web.exposure.include=*
-  ```
-- Enable the environment info endpoint:
-  ```properties
-  management.info.env.enabled=true
-  ```
-- Provide custom application metadata under the `/actuator/info` endpoint:
-  ```properties
-  info.app.name=Demo App
-  info.app.description=Spring Boot 3, Spring 6, Hibernate Project
-  info.app.version=1.0.0
-  ```
+```bash
+cp src/main/resources/application-sample.properties src/main/resources/application.properties
+```
 
-After these changes, you can access the following:
+## Subfolders
 
-- `/actuator` — view all available endpoints
-- `/actuator/info` — view custom app metadata
-- `/actuator/health` — check app health status
+### `01-spring-boot-demo`
+Basic Spring Boot setup with a simple REST API.
+
+- Adds Spring 6 demo project files
+- Includes: basic project structure, starter dependencies
+
+---
+
+### `02-dev-tools-demo`
+Demonstrates Spring Boot DevTools for hot reloads and development experience improvements.
+
+- Moves `README.md` to root
+- Adds `README.md` and two example REST controllers to test Dev-Tools changes
+- Shows live-reloading in action
+
+---
+
+### `03-actuator-demo`
+Enables and exposes Spring Boot Actuator endpoints.
+
+- Adds Spring Boot Actuator and exposes all endpoints
+- Stops tracking `application.properties` and add to `.gitignore`
+- Focus: monitoring endpoints and secure configuration handling
+
+---
+
+### `04-actuator-security-demo`
+Secures actuator endpoints with Spring Security.
+
+- Adds security dependency to `pom.xml`, practice exclusion of endpoints
+- Demonstrates fine-tuned control over actuator visibility
+
+---
+
+### `05-command-line-demo`
+Experimentation with running and configuring the app via command line.
+
+- Removes actuator and security dependency to test running from command line
+- Clean test of CLI and simplified dependency context
+
+---
+
+### `06-properties-demo`
+Custom configuration properties and their injection into a REST controller.
+
+- Defines custom properties for coach and team name in `application.properties`, inject into controller, expose endpoint
+- Configures server port and context path in `application.properties`
+- Demonstrates property injection using `@Value` and basic customization of Spring Boot environment 
+- Adds `application-sample.properties` to `src/main/resources` as a template config file
+- Updates README file with organized summary and configuration explanation
