@@ -25,7 +25,9 @@ cp src/main/resources/application-sample.properties src/main/resources/applicati
 
 ## Subfolders
 
-### `01-spring-boot-demo`
+### 📁 01-spring-boot-overview
+
+#### `01-spring-boot-demo`
 Basic Spring Boot setup with a simple REST API.
 
 - Adds Spring 6 demo project files
@@ -33,7 +35,7 @@ Basic Spring Boot setup with a simple REST API.
 
 ---
 
-### `02-dev-tools-demo`
+#### `02-dev-tools-demo`
 Demonstrates Spring Boot DevTools for hot reloads and development experience improvements.
 
 - Moves `README.md` to root
@@ -42,7 +44,7 @@ Demonstrates Spring Boot DevTools for hot reloads and development experience imp
 
 ---
 
-### `03-actuator-demo`
+#### `03-actuator-demo`
 Enables and exposes Spring Boot Actuator endpoints.
 
 - Adds Spring Boot Actuator and exposes all endpoints
@@ -51,7 +53,7 @@ Enables and exposes Spring Boot Actuator endpoints.
 
 ---
 
-### `04-actuator-security-demo`
+#### `04-actuator-security-demo`
 Secures actuator endpoints with Spring Security.
 
 - Adds security dependency to `pom.xml`, practice exclusion of endpoints
@@ -59,7 +61,7 @@ Secures actuator endpoints with Spring Security.
 
 ---
 
-### `05-command-line-demo`
+#### `05-command-line-demo`
 Experimentation with running and configuring the app via command line.
 
 - Removes actuator and security dependency to test running from command line
@@ -67,7 +69,7 @@ Experimentation with running and configuring the app via command line.
 
 ---
 
-### `06-properties-demo`
+#### `06-properties-demo`
 Custom configuration properties and their injection into a REST controller.
 
 - Defines custom properties for coach and team name in `application.properties`, inject into controller, expose endpoint
@@ -76,18 +78,18 @@ Custom configuration properties and their injection into a REST controller.
 - Adds `application-sample.properties` to `src/main/resources` as a template config file
 - Updates README file with organized summary and configuration explanation
 
-📁 02-spring-boot-spring-core
+---
 
-/01-constructor-injection
+### 📁 02-spring-boot-spring-core
+
+#### `01-constructor-injection`
 This module demonstrates constructor-based dependency injection using Spring Boot's core features.
 
-Features Implemented
-Defined a Coach interface and CricketCoach class annotated with @Component
+- Defines a Coach interface and CricketCoach class annotated with @Component
+- Creates a DemoController REST controller
+- Injects the Coach dependency via the controller constructor
+- Exposes a REST endpoint:
+  - GET /dailyworkout
+  - Returns a string workout message from the injected Coach
 
-Created a DemoController REST controller
-
-Injected the Coach dependency via the controller constructor
-
-Exposed a REST endpoint:
-GET /dailyworkout
-➜ Returns a string workout message from the injected Coach
+---
