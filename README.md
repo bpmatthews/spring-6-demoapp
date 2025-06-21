@@ -75,3 +75,19 @@ Custom configuration properties and their injection into a REST controller.
 - Demonstrates property injection using `@Value` and basic customization of Spring Boot environment 
 - Adds `application-sample.properties` to `src/main/resources` as a template config file
 - Updates README file with organized summary and configuration explanation
+
+📁 02-spring-boot-spring-core
+
+/01-constructor-injection
+This module demonstrates constructor-based dependency injection using Spring Boot's core features.
+
+Features Implemented
+Defined a Coach interface and CricketCoach class annotated with @Component
+
+Created a DemoController REST controller
+
+Injected the Coach dependency via the controller constructor
+
+Exposed a REST endpoint:
+GET /dailyworkout
+➜ Returns a string workout message from the injected Coach
